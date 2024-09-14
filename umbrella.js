@@ -1,3 +1,4 @@
+// Storing all the necessary elements
 const imgSection = document.querySelector(".image-section .umbrella-image");
 const svgLoader = document.querySelector(".image-section .svg-loader");
 const colorButtons = document.querySelectorAll(".color-btn");
@@ -7,6 +8,10 @@ const logoPreview = document.querySelector(".logo-preview");
 const closeBtn = document.querySelector(".close-btn");
 const uploadIcon = document.querySelector(".upload-icon");
 const body = document.querySelector("body");
+const uploadTxt = document.querySelector(".upload-txt"); // Reference to the upload-txt element
+
+// for hiding the close button initially
+closeBtn.style.display = "none";
 
 colorButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -42,7 +47,7 @@ colorButtons.forEach((button) => {
         break;
     }
 
-    // Set the fill color of the SVG path
+    // Setting the fill color of the SVG path
     svgLoader.querySelector("path").setAttribute("fill", fillColor);
 
     // Hiding the loader and updating the image
@@ -81,6 +86,10 @@ fileInput.addEventListener("change", (event) => {
 
         uploadIcon.src = "./assets/upload_icon.svg";
         uploadIcon.classList.remove("rotating");
+
+        // Updating the upload-txt element with the file name and showing the close button
+        uploadTxt.textContent = file.name;
+        closeBtn.style.display = "block";
       }, 1000);
     };
 
@@ -88,6 +97,10 @@ fileInput.addEventListener("change", (event) => {
   }
 });
 
+
+// when close button is clicked then the text will reset back to default and the close button will hide
 closeBtn.addEventListener("click", () => {
   logoPreview.style.display = "none";
+  uploadTxt.textContent = "UPLOAD LOGO";
+  closeBtn.style.display = "none";
 });
