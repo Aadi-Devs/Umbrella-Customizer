@@ -1,3 +1,4 @@
+// Selecting all the required elements
 const imgSection = document.querySelector(".image-section .umbrella-image");
 const svgLoader = document.querySelector(".image-section .svg-loader");
 const colorButtons = document.querySelectorAll(".color-btn");
@@ -21,6 +22,8 @@ colorButtons.forEach((button) => {
       imgSection.classList.remove("hidden");
       logoPreview.classList.remove("hidden");
 
+      // Code for changing the colours of the background and the upload button. 
+
       if (color === "Pink") {
         uploadBtn.style.transition = "background-color 0.3s ease";
         uploadBtn.style.backgroundColor = "#D41B7E";
@@ -34,7 +37,7 @@ colorButtons.forEach((button) => {
         uploadBtn.style.backgroundColor = "#F4C93E";
         body.style.backgroundColor = "#f4ca3e2e";
       }
-    }, 500);
+    }, 500); // delay in changing the colours of the background and the upload button 
   });
 });
 
@@ -49,18 +52,18 @@ fileInput.addEventListener("change", (event) => {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      // Show the loader icon and hide other elements
+      // This code is to show the loder icon and hide the other elements
       svgLoader.style.display = "block";
       logoPreview.style.display = "none";
       imgSection.style.display = "none";
 
-      // Wait for 1 or 2 seconds before showing the logo and hiding the loader
+      // this code is for waitinng for a few seconds before showing the logo and hiding the loader
       setTimeout(() => {
         svgLoader.style.display = "none";
         logoPreview.src = e.target.result;
         logoPreview.style.display = "block";
         imgSection.style.display = "block";
-      }, 1000); // Adjust this value for your desired delay
+      }, 1000); // we have to adjust this for our desired delay.
     };
 
     reader.readAsDataURL(file);
