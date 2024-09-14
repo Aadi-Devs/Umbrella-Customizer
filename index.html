@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Umbrella Customizer</title>
+    <link rel="stylesheet" href="umbrella.css" />
+    <script src="umbrella.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-section">
+        <img src="./assets/loader_icon.svg" alt="Loading" class="svg-loader" />
+        <img
+          src="./assets/Yellow umbrella.png"
+          alt="Yellow Umbrella"
+          class="umbrella-image"
+        />
+        <img class="logo-preview" alt="Logo Preview" class="logo-preview" />
+      </div>
+      <div class="content-section">
+        <h1 class="title">Custom Umbrella</h1>
+        <div class="colors">
+          <button
+            class="color-btn pink"
+            aria-label="Select pink color"
+            data-color="Pink"
+          ></button>
+          <button
+            class="color-btn blue"
+            aria-label="Select blue color"
+            data-color="Blue"
+          ></button>
+          <button
+            class="color-btn yellow"
+            aria-label="Select yellow color"
+            data-color="Yellow"
+          ></button>
+        </div>
+        <div class="customize-section">
+          <h2 class="subtitle">Customize your umbrella</h2>
+          <p class="instruction">Upload a logo for an instant preview.</p>
+          <p class="file-info">
+            .png and .jpg files only. Max file size is 5MB.
+          </p>
+        </div>
+        <div class="upload-section">
+          <input
+            type="file"
+            class="logo-upload"
+            accept="image/png, image/jpeg"
+            style="display: none"
+          />
+          <button class="upload-btn">
+            <img
+              src="./assets/upload_icon.svg"
+              alt="Upload Icon"
+              class="upload-icon"
+            />
+            <h3 class="upload-txt">UPLOAD LOGO</h3>
+          </button>
+          <button class="close-btn">X</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

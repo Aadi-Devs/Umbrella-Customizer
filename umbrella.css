@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4ca3e2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 8px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+@media (min-width: 890px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative; /* Ensure positioning context for the loader */
+  margin-bottom: 20px;
+}
+
+.umbrella-image {
+  width: 450px;
+  height: 400px;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.svg-loader {
+  width: 50px;
+  height: 50px;
+  display: none;
+  position: absolute;
+  /* color: white; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate 3s linear infinite;
+}
+
+.content-section {
+  flex: 1;
+  max-width: 400px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.colors {
+  display: flex;
+  gap: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+
+.pink {
+  background-color: #ff69b4;
+}
+.blue {
+  background-color: #007bff;
+}
+.yellow {
+  background-color: #ffdd57;
+}
+
+.customize-section {
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.instruction {
+  color: #2e2e2e;
+  margin-bottom: 5px;
+}
+
+.file-info {
+  color: #494949;
+  font-size: 0.875rem;
+}
+
+.logo-preview {
+  width: 80px;
+  height: auto;
+  position: absolute;
+  top: 330px;
+  right: 305px;
+  display: none;
+}
+
+.upload-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+.upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffc107;
+  color: white;
+  padding: 12px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+}
+
+.upload-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.upload-txt {
+  flex: 1;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
